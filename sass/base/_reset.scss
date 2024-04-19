@@ -1,0 +1,64 @@
+.dark {
+    $primaryColor: white;
+    $secondaryColor: black;
+    $darkModeColor: yellow;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+.container {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 1440px;
+}
+
+.df {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-top {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  font-size: 25px;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 25px 45px 0 rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  color: $secondaryColor;
+  display: none;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.show__back-top {
+    display: flex;
+}
+
