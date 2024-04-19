@@ -25,7 +25,7 @@ function createCard(data) {
             <h3>${product.productName}</h3>
             <p>${product.quantity} ${product.unit}</p>
             <p class = "price">${product.price} USD</p>
-            <button name="delete" data-id="${product.id}">Delete</button>
+            <button class="delete" name="delete" data-id="${product.id}">Delete</button>
             </div>
             
         `;

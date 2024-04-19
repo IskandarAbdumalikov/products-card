@@ -63,11 +63,27 @@ select {
   background: transparent;
   color: $secondaryColor;
   font-size: 18px;
+  transition: 0.5s;
+}
+
+button:hover{
+  background: $secondaryColor;
+  color: $primaryColor;
+}
+
+.cancel:hover,.delete:hover{
+  background: red;
+  color: $secondaryColor;
+}
+
+.add:hover{
+  background: green;
+  color: $secondaryColor;
 }
 
 p,
 h2,
-h3 {
+h3,h1 {
   color: $secondaryColor;
 }
 h3 {

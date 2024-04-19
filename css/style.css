@@ -385,11 +385,27 @@ select {
   background: transparent;
   color: white;
   font-size: 18px;
+  transition: 0.5s;
+}
+
+button:hover {
+  background: white;
+  color: black;
+}
+
+.cancel:hover, .delete:hover {
+  background: red;
+  color: white;
+}
+
+.add:hover {
+  background: green;
+  color: white;
 }
 
 p,
 h2,
-h3 {
+h3, h1 {
   color: white;
 }
 
