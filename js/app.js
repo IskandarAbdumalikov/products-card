@@ -6,9 +6,10 @@ const productName = document.querySelector(".name");
 const quantity = document.querySelector(".quantity");
 const unit = document.querySelector(".unit");
 const price = document.querySelector(".price");
-const imgUrl = document.querySelector(".img__url")
+const imgUrl = document.querySelector(".img__url");
 const addNewProduct = document.querySelector(".add__new__product");
-
+const cancel = document.querySelector(".cancel");
+const add = document.querySelector(".add");
 
 function createCard(data) {
   while (wrapper.firstChild) {
@@ -23,7 +24,7 @@ function createCard(data) {
             <div class="card__info">
             <h3>${product.productName}</h3>
             <p>${product.quantity} ${product.unit}</p>
-            <p>${product.price} USD</p>
+            <p class = "price">${product.price} USD</p>
             <button name="delete" data-id="${product.id}">Delete</button>
             </div>
             
@@ -35,7 +36,7 @@ function createCard(data) {
 createCard(PRODUCTS);
 
 class Product {
-  constructor(productName, quantity,unit,price,imgUrl) {
+  constructor(productName, quantity, unit, price, imgUrl) {
     this.id = `${new Date().getTime()}`;
     this.productName = productName;
     this.quantity = quantity;
@@ -45,11 +46,18 @@ class Product {
   }
 }
 
-form.addEventListener("submit", (e) => {
+add.addEventListener("click", (e) => {
   e.preventDefault();
-  let newProduct = new Product(productName.value, quantity.value,unit.value,price.value,imgUrl.value);
+  let newProduct = new Product(
+    productName.value,
+    quantity.value,
+    unit.value,
+    price.value,
+    imgUrl.value
+  );
   PRODUCTS.push(newProduct);
   createCard(PRODUCTS);
+  localStorage.setItem("productData", JSON.stringify(PRODUCTS));
   productName.value = "";
   quantity.value = "";
   unit.value = "";
@@ -57,18 +65,23 @@ form.addEventListener("submit", (e) => {
   imgUrl.value = "";
 });
 
-let deleteUser = (id)=>{
-  let index = PRODUCTS.findIndex(u=>u.id==id)
-  PRODUCTS.splice(index,1)
-  createCard(PRODUCTS)
-}
+let deleteUser = (id) => {
+  if(!confirm("Are you sure")) return
+  let index = PRODUCTS.findIndex((u) => u.id == id);
+  PRODUCTS.splice(index, 1);
+  createCard(PRODUCTS);
+};
 
-wrapper.addEventListener("click",e=>{
-  if (e.target.name = "delete") {
-     deleteUser(e.target.dataset.id)
+wrapper.addEventListener("click", (e) => {
+  if ((e.target.name = "delete")) {
+    deleteUser(e.target.dataset.id);
   }
-})
+});
 
-addNewProduct.addEventListener("click",function(){
+addNewProduct.addEventListener("click", function () {
   form.style.display = "grid";
-})
+});
+
+cancel.addEventListener("click", function () {
+  form.style.display = "none";
+});

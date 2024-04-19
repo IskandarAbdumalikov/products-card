@@ -160,7 +160,7 @@ button {
 
 .show__header__shrink {
   padding: 15px 0;
-  box-shadow: 0px 0px 10px #0B7572;
+  box-shadow: 0px 0px 10px white;
   background: rgba(255, 255, 255, 0.1);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -216,13 +216,13 @@ button {
 }
 
 .header__nav__right__list__item:hover {
-  color: #0B7572;
+  color: white;
 }
 
 .header__nav__right__list__item:hover::after,
 .header__nav__right__list__item:hover::before {
   width: 50%;
-  background: #0B7572;
+  background: white;
 }
 
 .header__nav__right__list__close {
@@ -246,9 +246,9 @@ button {
 }
 
 .header__nav__right__btns__contact:hover {
-  border-color: #0B7572;
-  background: #0B7572;
-  color: white;
+  border-color: white;
+  background: white;
+  color: black;
 }
 
 .header__nav__right__btns__hamburger {
@@ -269,7 +269,7 @@ button {
 }
 
 .header__nav__right__btns__hamburger:hover .header__nav__right__btns__hamburger__line {
-  background: #0B7572;
+  background: white;
 }
 
 .header__nav__right__btns__dark-mode {
@@ -302,7 +302,7 @@ button {
     flex-direction: column;
     justify-content: center;
     gap: 20px;
-    box-shadow: 0px 0px 15px #0B7572;
+    box-shadow: 0px 0px 15px white;
     transition: 0.3s;
     z-index: 9999;
   }
@@ -327,6 +327,7 @@ button {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 50px;
+  padding-top: 50px;
 }
 
 .card {
@@ -358,9 +359,20 @@ button {
 }
 
 .form {
-  display: grid;
+  display: none;
   grid-template-columns: repeat(2, 1fr);
   gap: 50px;
+  padding: 100px 50px;
+  overflow: auto;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px gray;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 25px 45px 0 rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  transition: 0.4s;
+  margin-bottom: 50px;
 }
 
 input,
@@ -368,15 +380,46 @@ button,
 select {
   padding: 10px 20px;
   outline: none;
-  border: 1px solid gray;
+  border: 1px solid white;
   border-radius: 5px;
   background: transparent;
-  color: black;
+  color: white;
   font-size: 18px;
 }
 
+p,
+h2,
+h3 {
+  color: white;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+.price {
+  font-size: 25px;
+}
+
+option {
+  background-color: black;
+}
+
+@media (max-width: 1100px) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .form {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 800px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+}
 footer {
-  background: #0B7572;
+  background: white;
   display: flex;
   flex-direction: column;
   gap: 80px;

@@ -15,7 +15,7 @@
     <style>
       body {
         height: 100vh;
-        background: url(https://images.ctfassets.net/hrltx12pl8hq/a2hkMAaruSQ8haQZ4rBL9/8ff4a6f289b9ca3f4e6474f29793a74a/nature-image-for-website.jpg?fit=fill&w=600&h=400);
+        background: url(https://media.istockphoto.com/id/956576840/photo/kalyan-mosque-at-dusk-in-bukhara-uzbekistan.jpg?s=612x612&w=0&k=20&c=d4B2tuYu0-IZuViwAWB9EkOU2SNMC8EZaug0QVza4mw=);
         background-size: 100%;
         background-position: center;
         background-clip: content-box;
@@ -74,16 +74,17 @@
       <!-- hero section start -->
       <section id="hero" class="container">
         <form class="form" action="">
-          <input class="name" type="text" />
-          <input class="quantity" type="number" />
+          <input placeholder="Product name" class="name" type="text" />
+          <input placeholder="Product count" class="quantity" type="number" />
           <select name="select" id="select" class="unit">
             <option value="kg">kg</option>
             <option value="litr">litr</option>
             <option value="dona">dona</option>
           </select>
-          <input type="number" class="price" />
-          <input type="text" class="img__url" />
-          <button>ADD</button>
+          <input  placeholder="Product price" type="number" class="price" />
+          <input placeholder="Product image URL" type="text" class="img__url" />
+          <button class="cancel">CANCEL</button>
+          <button class="add">ADD</button>
         </form>
         <button class="add__new__product">Add new product</button>
         <div class="wrapper"></div>
