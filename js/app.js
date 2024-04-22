@@ -11,6 +11,7 @@ const addNewProduct = document.querySelector(".add__new__product");
 const cancel = document.querySelector(".cancel");
 const add = document.querySelector(".add");
 
+
 function createCard(data) {
   while (wrapper.firstChild) {
     wrapper.firstChild.remove();
@@ -63,6 +64,7 @@ add.addEventListener("click", (e) => {
   unit.value = "";
   price.value = "";
   imgUrl.value = "";
+  form.style.display = "none";
 });
 
 let deleteUser = (id) => {
@@ -73,9 +75,10 @@ let deleteUser = (id) => {
 };
 
 wrapper.addEventListener("click", (e) => {
-  if ((e.target.name = "delete")) {
+  if ((e.target.name === "delete")) {
     deleteUser(e.target.dataset.id);
   }
+  localStorage.setItem("productData", JSON.stringify(PRODUCTS));
 });
 
 addNewProduct.addEventListener("click", function () {
